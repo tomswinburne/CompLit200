@@ -6,7 +6,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends zstd curl \
 
 # Deps for both notebooks
 RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
-RUN pip install --no-cache-dir requests jupyter ipykernel transformers scikit-learn matplotlib
+RUN pip install --no-cache-dir requests jupyter ipykernel scikit-learn matplotlib
+RUN pip install --no-cache-dir transformers
 
 # Pre-download HuggingFace models so students don't wait
 RUN python -c "\
