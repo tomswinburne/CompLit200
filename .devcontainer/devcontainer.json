@@ -1,8 +1,6 @@
 {
-  "name": "Poem Translation LLM Lab",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+  "image": "mcr.microsoft.com/devcontainers/python:3.11-bookworm",
+  "postCreateCommand": "pip install requests jupyter torch --index-url https://download.pytorch.org/whl/cpu && pip install transformers scikit-learn matplotlib",
   "postStartCommand": "nohup ollama serve > /tmp/ollama.log 2>&1 &",
   "forwardPorts": [11434, 8888],
   "customizations": {
